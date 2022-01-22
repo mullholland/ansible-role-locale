@@ -6,6 +6,7 @@
   vars:
     locale_conf:
       RedHat: "/etc/locale.conf"
+      Rocky: "/etc/locale.conf"
       Debian: "/etc/default/locale"
 
   tasks:
