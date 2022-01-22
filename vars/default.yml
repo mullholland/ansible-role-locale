@@ -1,0 +1,21 @@
+---
+locale_dependencies_map:
+  default: []
+  Debian:
+    - "locales"
+    - "locales-all"
+    - "tzdata"
+  Fedora:
+    - "langpacks-en"
+  Amazon:
+    - "util-linux"
+
+locale_dependencies: "{{ locale_dependencies_map[ansible_distribution] | default(locale_dependencies_map[ansible_os_family] | default(locale_dependencies_map['default'] )) }}"
+
+locale_conf:
+  RedHat: "/etc/locale.conf"
+  Debian: "/etc/default/locale"
+
+locale_update_command:
+  Redhat: localectl set-locale LANG={{ locale_lang }}
+  Debian: update-locale LANG={{ locale_lang }}

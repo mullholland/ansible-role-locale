@@ -1,0 +1,21 @@
+---
+# get current locale `locale`
+# get possible options with `locale -a`
+locale_lang: en_US.UTF-8
+
+# change only if you know what you are doing
+locale_language: "{{ locale_lang }}"
+locale_lc_address: "{{ locale_lang }}"
+locale_lc_all: "{{ locale_lang }}"
+locale_lc_collate: "{{ locale_lang }}"
+locale_lc_ctype: "{{ locale_lang }}"
+locale_lc_identification: "{{ locale_lang }}"
+locale_lc_measurement: "{{ locale_lang }}"
+locale_lc_messages: "{{ locale_lang }}"
+locale_lc_monetary: "{{ locale_lang }}"
+locale_lc_name: "{{ locale_lang }}"
+locale_lc_numeric: "{{ locale_lang }}"
+locale_lc_paper: "{{ locale_lang }}"
+locale_lc_response: "{{ locale_lang }}"
+locale_lc_telephone: "{{ locale_lang }}"
+locale_lc_time: "{{ locale_lang }}"

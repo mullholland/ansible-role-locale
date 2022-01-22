@@ -1,0 +1,6 @@
+---
+- name: update locale
+  ansible.builtin.command:
+    cmd: "{{ locale_update_command[ansible_os_family] }}"
+  when:
+    - ansible_connection not in [ "container", "docker", "community.docker.docker" ]
