@@ -11,7 +11,7 @@
 
   tasks:
     - name: SmokeTests
-      debug:
+      ansible.builtin.debug:
         msg:
           - "ansible_version => {{ansible_version}}"
           - "ansible_distribution => {{ ansible_distribution }}"
@@ -20,7 +20,7 @@
           - "ansible_system  => {{ ansible_system }}"
 
     - name: Test locale.conf
-      lineinfile:
+      ansible.builtin.lineinfile:
         name: "{{ locale_conf[ansible_os_family] }}"
         line: 'LANG=en_US.UTF-8'
         state: present
