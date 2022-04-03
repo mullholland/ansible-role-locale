@@ -49,6 +49,31 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
     - role: "mullholland.locale"
 ```
 
+The machine needs to be prepared in CI this is done using `molecule/default/prepare.yml`:
+```yaml
+---
+- name: Prepare
+  hosts: all
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Debian/Ubuntu | Install cron for Backupscript
+      ansible.builtin.apt:
+        name:
+          - "cron"
+        state: latest
+        update_cache: true
+      when: ansible_os_family == "Debian"
+
+    - name: RedHat/CentOS | Install cron for Backupscript
+      ansible.builtin.package:
+        name:
+          - "cronie"
+        state: latest
+      when: ansible_os_family == "RedHat" or ansible_os_family == "Rocky"
+```
+
 
 
 
