@@ -1,5 +1,10 @@
 # [locale](#locale)
 
+**IMPORTANT**
+This role will no longer be updated. you can use [robertdebock/ansible-role-locale](https://github.com/robertdebock/ansible-role-locale) as an alternative.
+
+---
+
 |GitHub|GitLab|
 |------|------|
 |[![github](https://github.com/mullholland/ansible-role-locale/workflows/Ansible%20Molecule/badge.svg)](https://github.com/mullholland/ansible-role-locale/actions)|[![gitlab](https://gitlab.com/mullholland/ansible-role-locale/badges/main/pipeline.svg)](https://gitlab.com/mullholland/ansible-role-locale)|
