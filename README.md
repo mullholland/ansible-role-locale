@@ -1,47 +1,15 @@
 # [locale](#locale)
 
-**IMPORTANT**
-This role will no longer be updated. you can use [robertdebock/ansible-role-locale](https://github.com/robertdebock/ansible-role-locale) as an alternative.
+Configures the local locale settings.
 
----
-
-|GitHub|GitLab|
-|------|------|
-|[![github](https://github.com/mullholland/ansible-role-locale/workflows/Ansible%20Molecule/badge.svg)](https://github.com/mullholland/ansible-role-locale/actions)|[![gitlab](https://gitlab.com/mullholland/ansible-role-locale/badges/main/pipeline.svg)](https://gitlab.com/mullholland/ansible-role-locale)|
-
-description
-
-## [Role Variables](#role-variables)
-
-These variables are set in `defaults/main.yml`:
-```yaml
----
-# get current locale `locale`
-# get possible options with `locale -a`
-locale_lang: en_US.UTF-8
-
-# change only if you know what you are doing
-locale_language: "{{ locale_lang }}"
-locale_lc_address: "{{ locale_lang }}"
-locale_lc_all: "{{ locale_lang }}"
-locale_lc_collate: "{{ locale_lang }}"
-locale_lc_ctype: "{{ locale_lang }}"
-locale_lc_identification: "{{ locale_lang }}"
-locale_lc_measurement: "{{ locale_lang }}"
-locale_lc_messages: "{{ locale_lang }}"
-locale_lc_monetary: "{{ locale_lang }}"
-locale_lc_name: "{{ locale_lang }}"
-locale_lc_numeric: "{{ locale_lang }}"
-locale_lc_paper: "{{ locale_lang }}"
-locale_lc_response: "{{ locale_lang }}"
-locale_lc_telephone: "{{ locale_lang }}"
-locale_lc_time: "{{ locale_lang }}"
-```
-
+|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![github](https://github.com/mullholland/ansible-role-locale/workflows/Ansible%20Molecule/badge.svg)](https://github.com/mullholland/ansible-role-locale/actions)|[![gitlab](https://gitlab.com/opensourceunicorn/ansible-role-locale/badges/master/pipeline.svg)](https://gitlab.com/opensourceunicorn/ansible-role-locale)|[![quality](https://img.shields.io/ansible/quality/57673)](https://galaxy.ansible.com/mullholland/locale)|[![downloads](https://img.shields.io/ansible/role/d/57673)](https://galaxy.ansible.com/mullholland/locale)|[![Version](https://img.shields.io/github/release/mullholland/ansible-role-locale.svg)](https://github.com/mullholland/ansible-role-locale/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
-This example is taken from `molecule/default/converge.yml` and is tested on each push, pull request and release.
+This example is taken from [`molecule/default/converge.yml`](https://github.com/mullholland/ansible-role-locale/blob/master/molecule/default/converge.yml) and is tested on each push, pull request and release.
+
 ```yaml
 ---
 - name: Converge
@@ -54,7 +22,8 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
     - role: "mullholland.locale"
 ```
 
-The machine needs to be prepared in CI this is done using `molecule/default/prepare.yml`:
+The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/mullholland/ansible-role-locale/blob/master/molecule/default/prepare.yml):
+
 ```yaml
 ---
 - name: Prepare
@@ -80,49 +49,72 @@ The machine needs to be prepared in CI this is done using `molecule/default/prep
 ```
 
 
+## [Role Variables](#role-variables)
+
+The default values for the variables are set in [`defaults/main.yml`](https://github.com/mullholland/ansible-role-locale/blob/master/defaults/main.yml):
+
+```yaml
+---
+# get current locale `locale`
+# get possible options with `locale -a`
+locale_lang: en_US.UTF-8
+
+# change only if you know what you are doing
+locale_language: "{{ locale_lang }}"
+locale_lc_address: "{{ locale_lang }}"
+locale_lc_all: "{{ locale_lang }}"
+locale_lc_collate: "{{ locale_lang }}"
+locale_lc_ctype: "{{ locale_lang }}"
+locale_lc_identification: "{{ locale_lang }}"
+locale_lc_measurement: "{{ locale_lang }}"
+locale_lc_messages: "{{ locale_lang }}"
+locale_lc_monetary: "{{ locale_lang }}"
+locale_lc_name: "{{ locale_lang }}"
+locale_lc_numeric: "{{ locale_lang }}"
+locale_lc_paper: "{{ locale_lang }}"
+locale_lc_response: "{{ locale_lang }}"
+locale_lc_telephone: "{{ locale_lang }}"
+locale_lc_time: "{{ locale_lang }}"
+```
+
+## [Requirements](#requirements)
+
+- pip packages listed in [requirements.txt](https://github.com/mullholland/ansible-role-locale/blob/master/requirements.txt).
 
 
+## [Context](#context)
+
+This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://mullholland.net) for further information.
+
+Here is an overview of related roles:
+![dependencies](https://raw.githubusercontent.com/mullholland/ansible-role-locale/png/requirements.png "Dependencies")
 
 ## [Compatibility](#compatibility)
 
 This role has been tested on these [container images](https://hub.docker.com/u/mullholland):
 
--   [debian9](https://hub.docker.com/r/mullholland/docker-molecule-debian9)
--   [debian10](https://hub.docker.com/r/mullholland/docker-molecule-debian10)
--   [debian11](https://hub.docker.com/r/mullholland/docker-molecule-debian11)
--   [ubuntu1804](https://hub.docker.com/r/mullholland/docker-molecule-ubuntu1804)
--   [ubuntu2004](https://hub.docker.com/r/mullholland/docker-molecule-ubuntu2004)
--   [ubuntu2204](https://hub.docker.com/r/mullholland/docker-molecule-ubuntu2204)
--   [centos7](https://hub.docker.com/r/mullholland/docker-molecule-centos7)
--   [centos-stream8](https://hub.docker.com/r/mullholland/docker-molecule-centos-stream8)
--   [centos-stream9](https://hub.docker.com/r/mullholland/docker-molecule-centos-stream9)
--   [ubi8](https://hub.docker.com/r/mullholland/docker-molecule-ubi8)
--   [fedora35](https://hub.docker.com/r/mullholland/docker-molecule-fedora35)
--   [fedora36](https://hub.docker.com/r/mullholland/docker-molecule-fedora36)
--   [amazonlinux](https://hub.docker.com/r/mullholland/docker-molecule-amazonlinux)
--   [rockylinux8](https://hub.docker.com/r/mullholland/docker-molecule-rockylinux8)
--   [almalinux8](https://hub.docker.com/r/mullholland/docker-molecule-almalinux8)
+|container|tags|
+|---------|----|
+|[EL](https://hub.docker.com/repository/docker/mullholland/docker-centos-systemd/general)|all|
+|[Amazon](https://hub.docker.com/repository/docker/mullholland/docker-amazonlinux-systemd/general)|Candidate|
+|[Fedora](https://hub.docker.com/repository/docker/mullholland/docker-fedora-systemd/general)|all|
+|[Ubuntu](https://hub.docker.com/repository/docker/mullholland/docker-ubuntu-systemd/general)|all|
+|[Debian](https://hub.docker.com/repository/docker/mullholland/docker-debian-systemd/general)|all|
 
 The minimum version of Ansible required is 2.10, tests have been done to:
 
--   The previous versions.
--   The current version.
-
-
-
-
+- The previous version.
+- The current version.
+- The development version.
 
 If you find issues, please register them in [GitHub](https://github.com/mullholland/ansible-role-locale/issues)
 
 ## [License](#license)
 
-MIT
-
+[MIT](https://github.com/mullholland/ansible-role-locale/blob/master/LICENSE).
 
 ## [Author Information](#author-information)
 
-[Mullholland](https://github.com/mullholland)
+[Mullholland](https://mullholland.net)
 
-## [Special Thanks](#special-thanks)
-
-Template inspired by [Robert de Bock](https://github.com/robertdebock)
+Please consider [sponsoring me](https://github.com/sponsors/mullholland).

@@ -10,7 +10,7 @@ locale_dependencies_map:
   Amazon:
     - "util-linux"
 
-locale_dependencies: "{{ locale_dependencies_map[ansible_distribution] | default(locale_dependencies_map[ansible_os_family] | default(locale_dependencies_map['default'] )) }}"
+locale_dependencies: "{{ locale_dependencies_map[ansible_distribution] | default(locale_dependencies_map[ansible_os_family] | default(locale_dependencies_map['default'])) }}"
 
 locale_conf:
   RedHat: "/etc/locale.conf"
