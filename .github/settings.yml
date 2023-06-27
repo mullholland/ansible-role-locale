@@ -1,0 +1,8 @@
+---
+#
+# Ansible managed
+#
+repository:
+  description: Configures the local locale settings.
+  homepage: https://mullholland.net
+  topics: packaging, system, ansible, molecule, tox, playbook
