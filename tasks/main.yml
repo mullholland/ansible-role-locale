@@ -13,10 +13,10 @@
     name: "{{ locale_dependencies }}"
     state: present
 
-- name: update locale.conf
+- name: Update locale.conf
   ansible.builtin.template:
     src: locale.conf.j2
     dest: "{{ locale_conf[ansible_os_family] }}"
     mode: "0644"
   notify:
-    - update locale
+    - Update locale
