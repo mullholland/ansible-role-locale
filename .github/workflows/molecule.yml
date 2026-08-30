@@ -31,6 +31,18 @@ jobs:
       fail-fast: false
       matrix:
         config:
+          - image: "rockylinux"
+            tag: "8"
+          - image: "rockylinux"
+            tag: "9"
+          - image: "rockylinux"
+            tag: "10"
+          - image: "almalinux"
+            tag: "8"
+          - image: "almalinux"
+            tag: "9"
+          - image: "almalinux"
+            tag: "10"
           - image: "amazonlinux"
             tag: "2023"
           - image: "fedora"
@@ -45,6 +57,10 @@ jobs:
             tag: "jammy"
           - image: "debian"
             tag: "trixie"
+          - image: "centos"
+            tag: "9"
+          - image: "centos"
+            tag: "10"
     env:
       namespace: mullholland
       image: ${{ matrix.config.image }}
