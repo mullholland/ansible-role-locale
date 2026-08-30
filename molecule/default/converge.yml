@@ -1,9 +1,8 @@
 ---
 - name: Converge
   hosts: all
-  become: true
   gather_facts: true
   # vars:
   #   example_var: "value"
   roles:
-    - role: "ansible-role-locale"
+    - role: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') }}"

@@ -1,5 +1,5 @@
 ---
-- name: update locale
+- name: Update locale
   ansible.builtin.command:
     cmd: "{{ locale_update_command[ansible_os_family] }}"
   changed_when: false
